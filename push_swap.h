@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 13:18:25 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/01/11 17:37:52 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/01/15 16:28:33 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		go_through(int argc, char **argv);
 int		amount_of_arrays(char **arr);
 void	ft_error(char *msg);
 int		is_number(char *num);
-void	ft_free(char **strs);
+void	ft_free(t_list *node);
 int		check_dup(int value, char **strs, int i);
 long	ft_atol(const char *str);
 t_list	*make_list(char **argv, int argc);
@@ -47,5 +47,13 @@ void	rrb(t_list **stack);
 void	ra(t_list **stack);
 void	rb(t_list **stack);
 void	rr(t_list **stack_a, t_list **stack_b);
+void	sort_two(t_list **head);
+void	sort_three(t_list **head);
+void	sort_four(t_list **stack_a, t_list **stack_b);
+void	sort_five(t_list **stack_a, t_list **stack_b);
+void	parser(t_list *stack_a, t_list *stack_b);
+int		is_sorted(t_list *stack);
+int		max_nbr(t_list *stack);
+int		min_nbr(t_list *stack);
 
 #endif

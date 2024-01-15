@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 09:33:30 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/01/09 09:51:06 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/01/15 15:22:31 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,32 @@ void	ft_error(char *msg)
 	exit(0);
 }
 
-void	ft_free(char **strs)
+int	check_dup(int value, char **strs, int i)
 {
-	size_t	i;
-
-	i = 0;
-	while (strs[i] != '\0')
+	i++;
+	while (strs[i])
 	{
-		free(strs[i]);
+		if (ft_atol(strs[i]) == value)
+			return (1);
 		i++;
 	}
-	free(strs);
+	return (0);
+}
+
+int	is_number(char *num)
+{
+	int	i;
+
+	i = 0;
+	if (num[i] == '-')
+		i++;
+	while (num[i])
+	{
+		if (!ft_isdigit(num[i]))
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 long	ft_atol(const char *str)
@@ -50,12 +65,38 @@ long	ft_atol(const char *str)
 	{
 		number *= 10;
 		number += *str++ - '0';
-		if ((unsigned long)number > 9223372036854775807)
-		{
-			if (mp == -1)
-				return (0);
-			return (-1);
-		}
 	}
+	if (number * mp > 2147483647 || number * mp < -2147483648)
+		ft_error("Error");
+	if (number == 0 && mp == -1)
+		ft_error("Error");
 	return (number * mp);
+}
+
+void	valid_arg(char **argv, int argc)
+{
+	int			i;
+	static char	**strs;
+	long		temp;
+
+	i = 0;
+	if (argc == 2)
+	{
+		strs = ft_split(argv[1], ' ');
+		if (!strs || strs[0] == NULL)
+			ft_error("Error");
+	}
+	else
+		strs = argv;
+	if (argc > 2)
+		i = 1;
+	while (strs[i])
+	{
+		temp = ft_atol(strs[i]);
+		if (!is_number(strs[i]))
+			ft_error("Error");
+		if (check_dup(temp, strs, i) || temp < -2147483648 || temp > 2147483647)
+			ft_error("Error");
+		i++;
+	}
 }

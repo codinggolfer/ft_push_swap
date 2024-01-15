@@ -11,7 +11,9 @@ FILES = push_swap.c \
 		t_lists.c \
 		push.c \
 		reverse_rotate.c \
-		rotate.c 
+		rotate.c \
+		eazy_sort.c \
+		sort_utils.c
 
 LIBFT = libft/libft.a
 
