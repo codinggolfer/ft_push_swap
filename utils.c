@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 09:33:30 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/01/15 15:22:31 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/01/16 13:58:07 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,9 @@ long	ft_atol(const char *str)
 
 void	valid_arg(char **argv, int argc)
 {
-	int			i;
-	static char	**strs;
-	long		temp;
+	int				i;
+	static char		**strs;
+	long			temp;
 
 	i = 0;
 	if (argc == 2)

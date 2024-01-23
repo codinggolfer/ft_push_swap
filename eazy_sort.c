@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 15:15:50 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/01/15 16:49:07 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/01/19 14:57:05 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	sort_three(t_list **head)
 {
 	t_list	*temp;
 
+	if (is_sorted(*head))
+		return ;
 	temp = listlast(*head);
 	if ((*head)->value < (*head)->next->value)
 	{
@@ -53,7 +55,10 @@ void	sort_four(t_list **stack_a, t_list **stack_b)
 			pb(stack_a, stack_b);
 			break ;
 		}
-		ra(stack_a);
+		if (min == (*stack_a)->next->value)
+			ra(stack_a);
+		else
+			rra(stack_a);
 	}
 	if (!is_sorted(*stack_a))
 		sort_three(stack_a);

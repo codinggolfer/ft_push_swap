@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 13:18:25 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/01/15 16:28:33 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/01/23 15:19:23 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,12 @@
 
 typedef struct s_list
 {
+	int				pos;
 	int				value;
+	int				target;
 	int				index;
+	int				cost_b;
+	int				cost_a;
 	struct s_list	*next;
 }	t_list;
 
@@ -55,5 +59,14 @@ void	parser(t_list *stack_a, t_list *stack_b);
 int		is_sorted(t_list *stack);
 int		max_nbr(t_list *stack);
 int		min_nbr(t_list *stack);
+void	put_index(t_list *stack, int size);
+void	sorter(t_list **stack_a, t_list **stack_b);
+void	get_targets(t_list **stack_a, t_list **stack_b);
+void	push_to_b(t_list **stack_a, t_list **stack_b);
+void	get_cost(t_list **stack_a, t_list **stack_b);
+void	get_pos(t_list **stack_a, t_list **stack_b);
+void	cheapest_move(t_list **stack_a, t_list **stack_b);
+int		abs(int i);
+void	make_move(t_list **stack_a, t_list **stack_b, int a, int b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 10:55:17 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/01/11 12:17:13 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/01/22 14:07:10 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ static void	swapper(t_list *stack)
 	temp_content = stack->value;
 	stack->value = temp->value;
 	temp->value = temp_content;
+	temp_content = stack->next->index;
+	temp->index = stack->index;
+	stack->index = temp_content;
 }
 
 void	sa(t_list *stack_a)

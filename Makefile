@@ -13,7 +13,11 @@ FILES = push_swap.c \
 		reverse_rotate.c \
 		rotate.c \
 		eazy_sort.c \
-		sort_utils.c
+		sort_utils.c \
+		sort.c \
+		target.c \
+		cost.c \
+		move.c 
 
 LIBFT = libft/libft.a
 
