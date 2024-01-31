@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:59:50 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/01/23 11:45:59 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/01/26 12:05:54 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ t_list	*new_list(int value)
 		return (NULL);
 	head->index = 0;
 	head->target = 2147483647;
-	head->cost_b = -1;
-	head->cost_a = -1;
 	head->value = value;
 	head->next = NULL;
 	return (head);
@@ -67,4 +65,3 @@ t_list	*create_list(t_list *head, int value)
 	}
 	return (head);
 }
-

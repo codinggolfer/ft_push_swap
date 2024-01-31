@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 09:41:34 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/01/23 16:18:39 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/01/26 11:46:37 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,15 @@
 static int	target_index(t_list **stack, int b_targ)
 {
 	t_list	*a;
-	int		i;
 
-	i = 0;
 	a = *stack;
 	while (a)
 	{
 		if (a->index == b_targ)
-			break ;
-		i++;
+			return (a->pos);
 		a = a->next;
 	}
-	return (i);
+	return (0);
 }
 
 void	get_cost(t_list **stack_a, t_list **stack_b)
@@ -50,10 +47,10 @@ void	get_cost(t_list **stack_a, t_list **stack_b)
 	}
 }
 
-int	abs(int i)
+static int	abs_nbr(int i)
 {
 	if (i < 0)
-		return (i * -1);
+		return (i *= -1);
 	return (i);
 }
 
@@ -68,9 +65,9 @@ void	cheapest_move(t_list **stack_a, t_list **stack_b)
 	cheapest = 2147483647;
 	while (temp)
 	{
-		if (abs(temp->cost_a) + abs(temp->cost_b) < abs(cheapest))
+		if (abs_nbr(temp->cost_a) + abs_nbr(temp->cost_b) < abs_nbr(cheapest))
 		{
-			cheapest = abs(temp->cost_a) + abs(temp->cost_b);
+			cheapest = abs_nbr(temp->cost_a) + abs_nbr(temp->cost_b);
 			cost_a = temp->cost_a;
 			cost_b = temp->cost_b;
 		}

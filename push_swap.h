@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 13:18:25 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/01/23 15:19:23 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/01/26 11:50:37 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ typedef struct s_list
 }	t_list;
 
 void	valid_arg(char **argv, int argc);
-int		go_through(int argc, char **argv);
-int		amount_of_arrays(char **arr);
 void	ft_error(char *msg);
 int		is_number(char *num);
 void	ft_free(t_list *node);
@@ -66,7 +64,6 @@ void	push_to_b(t_list **stack_a, t_list **stack_b);
 void	get_cost(t_list **stack_a, t_list **stack_b);
 void	get_pos(t_list **stack_a, t_list **stack_b);
 void	cheapest_move(t_list **stack_a, t_list **stack_b);
-int		abs(int i);
 void	make_move(t_list **stack_a, t_list **stack_b, int a, int b);
 
 #endif

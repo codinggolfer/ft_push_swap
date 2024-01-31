@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 12:22:34 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/01/11 15:31:01 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/01/26 11:57:28 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,3 @@ void	rrr(t_list **stack_a, t_list **stack_b)
 	reverse_rotate(stack_b);
 	ft_putendl_fd("rrr", 1);
 }
-

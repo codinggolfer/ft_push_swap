@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 11:46:00 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/01/23 16:25:44 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/01/26 12:30:52 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,16 +69,6 @@ void	parser(t_list *stack_a, t_list *stack_b)
 		sorter(&stack_a, &stack_b);
 	ft_free(stack_a);
 	ft_free(stack_b);
-	// while (stack_a)
-	// {
-	// 	printf("in parser stack a:%d\n", stack_a->value);
-	// 	stack_a = stack_a->next;
-	// }
-	// while (stack_b)
-	// {
-	// 	printf("stack b:%d --> target in a(closest bigger): {%d}\n", stack_b->value, stack_b->target);
-	// 	stack_b = stack_b->next;
-	// }
 }
 
 int	main(int argc, char **argv)
@@ -92,24 +82,6 @@ int	main(int argc, char **argv)
 	stack_a = make_list(argv, argc);
 	stack_b = NULL;
 	put_index(stack_a, listsize(stack_a) + 1);
-	// while (stack_a)
-	// {
-	// 	printf("{%d}", stack_a->index);
-	// 	printf("stack a:%d\n", stack_a->value);
-	// 	stack_a = stack_a->next;
-	// }
 	parser(stack_a, stack_b);
-	// while (stack_a)
-	// {
-	// 	printf("stack a:%d\n", stack_a->value);
-	// 	stack_a = stack_a->next;
-	// }
-	// while (stack_b)
-	// {
-	// 	printf("stack b:%d\n", stack_b->value);
-	// 	stack_b = stack_b->next;
-	// }
-	// ft_free(stack_a);
-	// ft_free(stack_b);
-	return (0);
+	exit (0);
 }

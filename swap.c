@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 10:55:17 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/01/22 14:07:10 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/01/26 11:57:07 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,3 @@ void	ss(t_list *stack_a, t_list *stack_b)
 	swapper(stack_b);
 	ft_putendl_fd("ss", 1);
 }
-

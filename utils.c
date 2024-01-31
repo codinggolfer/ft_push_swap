@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 09:33:30 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/01/16 13:58:07 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/01/24 16:46:56 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int	is_number(char *num)
 	int	i;
 
 	i = 0;
+	if (!num[0])
+		return (0);
 	if (num[i] == '-')
 		i++;
 	while (num[i])
